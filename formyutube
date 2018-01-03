@@ -1,0 +1,23 @@
+<?php 
+	require_once 'includes/cabecalho.html';
+	require_once 'includes/rodape.html';
+?>
+<div class="container">
+	<form action="#">	
+		<div class="form-group">
+			<input type="text" class="form-control" id="url">
+		</div>
+		<a href="#" class="btn btn-primary" id="btn">Visualiza</a>
+	</form>
+</div>
+<div id="video"></div>
+
+<script>
+
+	$("#btn").on("click",function(){
+		var url1 = $("#url").val()
+		var url2 = url1.replace("watch?v=","embed/")
+		var url = "<iframe width='560' height='315' src='" + url2 + "' frameborder='0' gesture='media' allow='encrypted-media' allowfullscreen></iframe>";
+		$("#video").html(url);
+	});
+</script>
